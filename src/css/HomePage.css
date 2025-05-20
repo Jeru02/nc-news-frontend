@@ -1,0 +1,43 @@
+.articleContainer{
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+column-gap: 30px;
+column-gap: 10px;
+border: solid red 5px;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+.articleContainer{
+
+display: grid;
+grid-template-columns: 1fr ;
+column-gap: 30px;
+column-gap: 10px;
+border: solid red 5px;
+
+}
+
+img{
+
+    width: 200px;
+}
+    
+}
+
+
+
+
+
+
+img{
+
+    width: 500px;
+}
+
+ul {
+  list-style-type: none;
+}
