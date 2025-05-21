@@ -30,6 +30,7 @@ const HomePage = () => {
     <>
       <p>Homepage Logged in as{loggedinUser}</p>
       <ArticleContainer articles={articles} />
+      <SelectedArticleComments articles={articles} />
     </>
   );
 };
