@@ -5,7 +5,7 @@ import UsernameInput from "./UsernameInput";
 
 const LoginForm = ({setLoggedInUser}) => {
   const [inputUsername, setInputUsername] = useState("");
-  console.log(inputUsername, "<------updating input")
+  
   
 
 
