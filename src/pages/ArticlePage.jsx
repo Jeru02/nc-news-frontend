@@ -1,7 +1,10 @@
 import { useParams } from "react-router";
 import { getArticleById } from "../utils/api";
 import { useEffect, useState } from "react";
-import SelectedArticleContainer from "../components/SelectedArticle";
+import SelectedArticle from "../components/SelectedArticle";
+import CommentsContainer from "../components/CommentsContainer";
+
+
 
 const ArticlePage = () => {
   const [article, setArticle] = useState(null);
@@ -29,7 +32,8 @@ const ArticlePage = () => {
     );
   }
 
-  return <SelectedArticleContainer article={article} />;
+  return <><SelectedArticle article={article} />
+  <CommentsContainer id={params.article_id} /></>;
 };
 
 export default ArticlePage;

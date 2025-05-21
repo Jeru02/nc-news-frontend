@@ -1,5 +1,0 @@
-const SelectedArticleComments = () =>{
-
-}
-
-module.exports()
