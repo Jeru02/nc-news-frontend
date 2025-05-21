@@ -1,26 +1,20 @@
-const voteButtons = ({setVotes, setHasVoted, hasVoted})=>{
+const voteButtons = ({setVote, setHasVoted, hasVoted})=>{
     
-function incVotes (){
-    setVotes((prevVotes)=>{
-        prevVotes = prevVotes + 1 
-        return prevVotes 
-    })
+function incVote (){
+    setVote(1)
 
     setHasVoted(true)
 }
-function decVotes (){
+function decVote (){
 
-     setVotes((prevVotes)=>{
-        prevVotes = prevVotes -1 
-        return prevVotes 
-    })
+     setVote(-1)
     setHasVoted(true)
 }
 
 
 
-return <><button onClick={incVotes} disabled={hasVoted}>Like</button>
-<button onClick={decVotes} disabled={hasVoted}>dislike</button></>
+return <><button onClick={incVote} disabled={hasVoted}>Like</button>
+<button onClick={decVote} disabled={hasVoted}>dislike</button></>
 }
 
 export default voteButtons

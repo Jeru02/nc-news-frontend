@@ -24,11 +24,14 @@ export const getComments = (id) => {
 
 
 
+export const postVote = (vote, id)  =>{
 
-// Post /api/articles/:article_id/comments
+  
+let voteToSend = { inc_votes: vote }
 
+return ArticlesApi.patch(`/api/articles/${id}`, voteToSend).then((res) => {
+    return res.data.article;
+  });
+  
+}
 
-// {
-//       username: "icellusedkars",
-//       body: "congrats on the new job Tom!",
-//     };

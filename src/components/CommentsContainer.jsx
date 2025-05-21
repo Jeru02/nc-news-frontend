@@ -5,7 +5,7 @@ import CommentCard from "./CommentCard";
 const CommentsContainer = ({ id }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  console.log(id);
+
   useEffect(() => {
     getComments(id)
       .then((results) => {
@@ -16,7 +16,6 @@ const CommentsContainer = ({ id }) => {
       })
       .finally(() => {
         setIsLoading(false);
-        console.log(comments);
       });
   }, []);
 
@@ -31,7 +30,7 @@ const CommentsContainer = ({ id }) => {
   return (
     <ul>
       {comments.map((singleComment) => {
-       return <CommentCard singleComment={singleComment} />;
+        return <CommentCard singleComment={singleComment} />;
       })}
     </ul>
   );
