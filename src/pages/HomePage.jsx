@@ -2,21 +2,29 @@ import { useContext, useState } from "react";
 import { AccountContext } from "../Account";
 import ArticleContainer from "../components/ArticleContainer";
 import { useEffect } from "react";
-import { getItems } from "../api";
-import { use } from "react";
-import "../css/HomePage.css"
+import { getItems } from "../utils/api";
+import "../css/HomePage.css";
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getItems().then((result) => {
       setArticles(result);
+      setIsLoading(false)
     });
   }, []);
 
   const { loggedinUser } = useContext(AccountContext);
-  console.log(loggedinUser, "<----------- here");
+
+  if (isLoading) {
+    return (
+      <div>
+        <p>Loading.....</p>
+      </div>
+    );
+  }
 
   return (
     <>

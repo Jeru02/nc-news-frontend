@@ -1,15 +1,16 @@
-const ArticleCard = ({singleArticle})=>{
+import { Link } from "react-router";
 
-return(<li key={singleArticle.article_id}>
-      <img src={singleArticle.article_img_url} alt="product img" />
-      <p>{singleArticle.article_id}</p>
+const ArticleCard = ({ singleArticle }) => {
+  return (
+    <li key={singleArticle.article_id+singleArticle.title} >
+      <Link to={`/ArticlePage/${singleArticle.article_id}`}>
+        <img src={singleArticle.article_img_url} alt="product img" />
+      </Link>
       <p>{singleArticle.title}</p>
-      <p>{singleArticle.topic}</p>
+      <p>{singleArticle.author}</p>
       <p>{singleArticle.created_at}</p>
-      <p>{singleArticle.votes}</p>
-      <p>{singleArticle.comment_count}</p>
-    </li> )
+    </li>
+  );
+};
 
-}
-
-export default ArticleCard
+export default ArticleCard;
