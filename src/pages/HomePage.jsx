@@ -16,7 +16,8 @@ const HomePage = () => {
     });
   }, []);
 
-  const { loggedinUser } = useContext(AccountContext);
+  const { loggedInUser } = useContext(AccountContext);
+
 
   if (isLoading) {
     return (
@@ -28,7 +29,7 @@ const HomePage = () => {
 
   return (
     <>
-      <p>Homepage Logged in as{loggedinUser}</p>
+      <p>Homepage Logged in as{loggedInUser}</p>
       <ArticleContainer articles={articles} />
       
     </>

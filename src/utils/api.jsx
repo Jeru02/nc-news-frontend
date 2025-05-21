@@ -22,16 +22,10 @@ export const getComments = (id) => {
   });
 };
 
+export const postVote = (vote, id) => {
+  let voteToSend = { inc_votes: vote };
 
-
-export const postVote = (vote, id)  =>{
-
-  
-let voteToSend = { inc_votes: vote }
-
-return ArticlesApi.patch(`/api/articles/${id}`, voteToSend).then((res) => {
+  return ArticlesApi.patch(`/api/articles/${id}`, voteToSend).then((res) => {
     return res.data.article;
   });
-  
-}
-
+};
