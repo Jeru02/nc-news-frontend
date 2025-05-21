@@ -1,4 +1,4 @@
-const SelectedArticleContainer = ({ article }) => {
+const SelectedArticle = ({ article }) => {
   return (
     <div>
       <img src={article.article_img_url} alt="product img" />
@@ -10,4 +10,4 @@ const SelectedArticleContainer = ({ article }) => {
   );
 };
 
-export default SelectedArticleContainer;
+export default SelectedArticle;
