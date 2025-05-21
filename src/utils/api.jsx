@@ -21,3 +21,14 @@ export const getComments = (id) => {
     return res.data.comments;
   });
 };
+
+
+
+
+// Post /api/articles/:article_id/comments
+
+
+// {
+//       username: "icellusedkars",
+//       body: "congrats on the new job Tom!",
+//     };
