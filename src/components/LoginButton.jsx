@@ -11,11 +11,24 @@ const LoginButton = ({ inputUsername }) => {
     setLoggedInUser(inputUsername);
   };
 
+  const loginWithGuest = (event) => {
+    // event.preventDefault();
+
+    setLoggedInUser("tickle122");
+  };
+
   return (
-    <Link to="/HomePage" onClick={loginWithUsername}>
-      <button>Login</button>
-    </Link>
+    <>
+      {" "}
+      <Link to="/HomePage" onClick={loginWithUsername}>
+        <button className="loginButton">Login</button>
+      </Link>
+      <Link to="/HomePage" onClick={loginWithGuest}>
+        <button className="loginButton">Contitnue as guest</button>
+      </Link>
+    </>
   );
 };
 //onClick={loginWithUsername}
 export default LoginButton;
+//

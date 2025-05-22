@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AccountContext } from "../Account";
 import ArticleContainer from "../components/ArticleContainer";
 import { useEffect } from "react";
-import { getItems } from "../utils/api";
+import { getArticles } from "../utils/api";
 import "../css/HomePage.css";
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getItems().then((result) => {
+    getArticles().then((result) => {
       setArticles(result);
       setIsLoading(false);
     });
