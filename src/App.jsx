@@ -5,11 +5,10 @@ import HomePage from "./pages/HomePage";
 import { AccountProvider } from "./Account";
 import ArticlePage from "./pages/ArticlePage";
 
-
 function App() {
   return (
     <>
-       <AccountProvider>
+      <AccountProvider>
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/HomePage" element={<HomePage />} />

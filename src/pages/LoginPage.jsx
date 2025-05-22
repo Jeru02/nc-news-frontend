@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm";
 
-import LoginBackground from "/Users/jeruboateng/Northcoders/frontend/nc-news-frontend/src/assets/login-picture.jpg";
+import LoginBackground from "../assets/login-picture.jpg";
 
 import "../css/loginPage.css";
 

@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import SelectedArticle from "../components/SelectedArticle";
 import CommentsContainer from "../components/CommentsContainer";
 
-
-
 const ArticlePage = () => {
   const [article, setArticle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,8 +30,12 @@ const ArticlePage = () => {
     );
   }
 
-  return <><SelectedArticle article={article} />
-  <CommentsContainer id={params.article_id} /></>;
+  return (
+    <>
+      <SelectedArticle article={article} />
+      <CommentsContainer id={params.article_id} />
+    </>
+  );
 };
 
 export default ArticlePage;

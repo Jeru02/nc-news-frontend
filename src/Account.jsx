@@ -1,20 +1,13 @@
 import { createContext, useState } from "react";
 
-export const AccountContext = createContext(null)
+export const AccountContext = createContext(null);
 
+export const AccountProvider = ({ children }) => {
+  const [loggedInUser, setLoggedInUser] = useState("");
 
-
-export const AccountProvider = ({children}) => {
-
-const [loggedInUser, setLoggedInUser] = useState("");
-
-
-return (
-
+  return (
     <AccountContext.Provider value={{ loggedInUser, setLoggedInUser }}>
       {children}
     </AccountContext.Provider>
-)
-
-
-}
+  );
+};

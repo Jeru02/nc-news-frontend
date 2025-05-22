@@ -3,15 +3,12 @@ import { AccountContext } from "../Account";
 import { useContext } from "react";
 
 const LoginButton = ({ inputUsername }) => {
-const { setLoggedInUser } = useContext(AccountContext);
-  
-
+  const { setLoggedInUser } = useContext(AccountContext);
 
   const loginWithUsername = (event) => {
     // event.preventDefault();
-    
-    setLoggedInUser(inputUsername);
 
+    setLoggedInUser(inputUsername);
   };
 
   return (
