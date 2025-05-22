@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { useState } from "react";
 import LoginButton from "./LoginButton";
 import UsernameInput from "./UsernameInput";
-import logo from "../assets/logo.png";
+import logo from "../assets/mountainlogo.png";
 
 
 const LoginForm = ({setLoggedInUser}) => {

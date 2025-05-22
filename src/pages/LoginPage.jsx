@@ -11,7 +11,7 @@ const LoginPage = ({ setLoggedInUser }) => {
       
       <img
         src={LoginBackground}
-        alt="city lights picture"
+        alt="city lights pi"
         className="background"
       />
 
