@@ -10,8 +10,8 @@ setInputUsername(event.target.value)
 
 return (
     <div>
-    <label htmlFor="userInput">Username </label>
-    <input value = {inputUsername} className="userInput" onChange={updateInputUsername}></input>
+    
+    <input  placeholder="Username" value = {inputUsername} className="userInput" onChange={updateInputUsername}></input>
     </div>
    
   );

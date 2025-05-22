@@ -4,15 +4,18 @@ import LoginBackground from "../assets/login-picture.jpg";
 
 import "../css/loginPage.css";
 
-const LoginPage = ({ setLoggedInUser}) => {
+
+const LoginPage = ({ setLoggedInUser }) => {
   return (
     <>
+      
       <img
         src={LoginBackground}
-        alt="Person shopping for clothes"
+        alt="city lights picture"
         className="background"
       />
-      <LoginForm  />
+
+      <LoginForm />
     </>
   );
 };
