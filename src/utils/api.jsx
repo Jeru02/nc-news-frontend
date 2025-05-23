@@ -39,4 +39,14 @@ return ArticlesApi.post(`/api/articles/${id}/comments`, commentToSend).then((res
 
 }
 
+export const delComment = (comment_id) => {
+
+return ArticlesApi.delete(`/api/comments/${comment_id}`).then((res)=>{
+  console.log(res)
+}).catch((err)=>{
+  console.log(err)
+})
+
+}
+
  

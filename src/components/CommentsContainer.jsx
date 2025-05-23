@@ -31,11 +31,11 @@ const CommentsContainer = ({ id }) => {
 
   return (
     <>
-    <p>{comments.length == 0 ? "no comments" : comments.length} Comments</p>
+    <p>{comments.length == 0 ? "no " : comments.length} comments</p>
     <CommentPostForm setComments={setComments} id={id}/>
     <ul>
       {comments.map((singleComment) => {
-        return <CommentCard singleComment={singleComment} />;
+        return <CommentCard singleComment={singleComment} setComments={setComments}/>;
       })}
     </ul></>
     
