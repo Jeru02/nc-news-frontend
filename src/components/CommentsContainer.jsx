@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import CommentCard from "./CommentCard";
+import CommentPostForm from "./CommentPostForm";
+
 
 const CommentsContainer = ({ id }) => {
   const [comments, setComments] = useState([]);
@@ -17,7 +19,7 @@ const CommentsContainer = ({ id }) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [setComments]);
 
   if (isLoading) {
     return (
@@ -30,7 +32,7 @@ const CommentsContainer = ({ id }) => {
   return (
     <>
     <p>{comments.length == 0? "no comments" : comments.length} Comments</p>
-    <CommentPostForm />
+    <CommentPostForm setComments={setComments} id={id}/>
     <ul>
       {comments.map((singleComment) => {
         return <CommentCard singleComment={singleComment} />;
