@@ -31,7 +31,7 @@ const CommentsContainer = ({ id }) => {
 
   return (
     <>
-    <p>{comments.length == 0? "no comments" : comments.length} Comments</p>
+    <p>{comments.length == 0 ? "no comments" : comments.length} Comments</p>
     <CommentPostForm setComments={setComments} id={id}/>
     <ul>
       {comments.map((singleComment) => {

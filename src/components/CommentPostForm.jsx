@@ -34,6 +34,7 @@ const CommentPostForm = ({ setComments, id }) => {
         placeholder="Add a comment..."
         value={inputComment}
         onChange={updateInputUsername}
+        required
       />
       <button onClick={addToComments}>post</button>
     </form>
