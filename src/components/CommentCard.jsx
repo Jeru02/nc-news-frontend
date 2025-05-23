@@ -12,3 +12,4 @@ const CommentCard = ({singleComment})=>{
 }
 
 export default CommentCard
+

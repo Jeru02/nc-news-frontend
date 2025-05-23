@@ -29,3 +29,14 @@ export const postVote = (vote, id) => {
     return res.data.article;
   });
 };
+
+export const postComment = (id, username, body) => {
+let commentToSend = { username:username, body:body };
+
+return ArticlesApi.post(`/api/articles/${id}/comments`, commentToSend).then((res) => {
+    return res.data.comment;
+  });
+
+}
+
+ 
