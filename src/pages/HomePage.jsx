@@ -4,6 +4,8 @@ import ArticleContainer from "../components/ArticleContainer";
 import { useEffect } from "react";
 import { getArticles } from "../utils/api";
 import "../css/HomePage.css";
+import Lottie from "lottie-react";
+import loadingAnimation from "../assets/loadingAnimation.json"
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
@@ -20,9 +22,8 @@ const HomePage = () => {
 
   if (isLoading) {
     return (
-      <div>
-        <p>Loading.....</p>
-      </div>
+      <div id= "loaderContainer"><div class="loader"></div></div>
+      
     );
   }
 

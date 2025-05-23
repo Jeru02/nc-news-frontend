@@ -1,4 +1,9 @@
+
+
 .articleContainer{
+
+
+
 
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
@@ -21,6 +26,8 @@ border: solid red 5px;
 
 }
 
+
+
 img{
 
     width: 200px;
@@ -40,4 +47,53 @@ img{
 
 ul {
   list-style-type: none;
+}
+
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+#loaderContainer{
+height: 100vh;
+width: 100vw;
+
+background-color: rgba(19, 21, 23, 0.952);
+display: flex;
+flex-direction: row;
+justify-content: center;
+
+
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  justify-self: center;
+  width: 100px;
+  aspect-ratio: .5;
+  display: grid;
+}
+.loader:before {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: auto auto 0;
+  background: rgb(35, 109, 141);
+  animation: l9-0 .5s cubic-bezier(0,800,1,800) infinite;
+}
+.loader:after {
+  content: "";
+  width: 100%;
+  aspect-ratio: 1/cos(30deg);
+  margin: 0 auto auto;
+  clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+  background: rgba(201, 89, 214, 0.52);
+  animation: l9-1 .5s linear infinite;
+}
+@keyframes l9-0 {
+  0%,2%  {translate: 0   0%}
+  98%,to {translate: 0 -.2%}
+}
+@keyframes l9-1 {
+  0%,5%  {rotate:  0deg}
+  95%,to {rotate:-60deg}
 }

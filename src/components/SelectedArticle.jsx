@@ -29,7 +29,6 @@ const SelectedArticle = ({ article }) => {
       <p>{article.author}</p>
       <p>{article.body}</p>
       <p>{article.created_at}</p>
-      <p>{article.comment_count == 0? "no comments" : article.comment_count} Comments</p>
     </div>
   );
 };
