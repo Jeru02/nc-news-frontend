@@ -4,8 +4,12 @@ const ArticlesApi = axios.create({
   baseURL: "https://nc-news-api-d244.onrender.com/",
 });
 
-export const getArticles = () => {
-  return ArticlesApi.get("api/articles").then((res) => {
+export const getArticles = (topic) => {
+  return ArticlesApi.get("api/articles", {
+    params: {
+      topic: topic,
+    },
+  }).then((res) => {
     return res.data.articles;
   });
 };
@@ -31,22 +35,27 @@ export const postVote = (vote, id) => {
 };
 
 export const postComment = (id, username, body) => {
-let commentToSend = { username:username, body:body };
+  let commentToSend = { username: username, body: body };
 
-return ArticlesApi.post(`/api/articles/${id}/comments`, commentToSend).then((res) => {
-    return res.data.comment;
-  });
-
-}
+  return ArticlesApi.post(`/api/articles/${id}/comments`, commentToSend).then(
+    (res) => {
+      return res.data.comment;
+    }
+  );
+};
 
 export const delComment = (comment_id) => {
+  return ArticlesApi.delete(`/api/comments/${comment_id}`)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
-return ArticlesApi.delete(`/api/comments/${comment_id}`).then((res)=>{
-  console.log(res)
-}).catch((err)=>{
-  console.log(err)
-})
-
-}
-
- 
+export const getTopics = () => {
+  return ArticlesApi.get(`/api/topics`).then((res) => {
+    return res.data.topics;
+  });
+};
