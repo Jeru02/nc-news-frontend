@@ -7,22 +7,26 @@ import "../css/HomePage.css";
 import loadingAnimation from "../assets/loadingAnimation.json";
 import TopicFilter from "../components/TopicFilter";
 import { useParams } from "react-router";
+import SortForm from "../components/SortForm";
+
 
 const HomePage = () => {
   const params = useParams();
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [topics, setTopics] = useState([]);
+  const [sort_by, setSort_by] = useState(undefined);
+  const [order, setOrder] = useState(undefined);
 
   useEffect(() => {
-    getArticles(params.topic).then((result) => {
+    getArticles(params.topic,sort_by,order).then((result) => {
       setArticles(result);
       getTopics().then((topicResult) => {
         setTopics(topicResult);
         setIsLoading(false);
       });
     });
-  }, [articles]);
+  }, [articles, sort_by, order]);
 
   const { loggedInUser } = useContext(AccountContext);
 
@@ -38,7 +42,9 @@ const HomePage = () => {
     <>
       <p>Homepage Logged in as {loggedInUser}</p>
       <TopicFilter topics={topics} />
+      <SortForm setSort_by={setSort_by} setOrder={setOrder}/>
       <ArticleContainer articles={articles} />
+      
     </>
   );
 };
