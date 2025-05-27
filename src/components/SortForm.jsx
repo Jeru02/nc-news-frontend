@@ -1,16 +1,15 @@
-import { Form } from "react-router";
 
-const SortForm = ({ setSort_by, setOrder }) => {
+
+const SortForm = ({ setSort_by, setOrder}) => {
 
 const SetSort = (e)=>{
-
 setSort_by(e.target.value)
 
 }
 
 const SetOrder = (e)=>{
-
 setOrder(e.target.value)
+
 
 }
 

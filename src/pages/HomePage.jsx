@@ -4,11 +4,9 @@ import ArticleContainer from "../components/ArticleContainer";
 import { useEffect } from "react";
 import { getArticles, getTopics } from "../utils/api";
 import "../css/HomePage.css";
-import loadingAnimation from "../assets/loadingAnimation.json";
 import TopicFilter from "../components/TopicFilter";
 import { useParams } from "react-router";
 import SortForm from "../components/SortForm";
-
 
 const HomePage = () => {
   const params = useParams();
@@ -19,21 +17,24 @@ const HomePage = () => {
   const [order, setOrder] = useState(undefined);
 
   useEffect(() => {
-    getArticles(params.topic,sort_by,order).then((result) => {
-      setArticles(result);
-      getTopics().then((topicResult) => {
-        setTopics(topicResult);
-        setIsLoading(false);
-      });
+    getTopics().then((topicResult) => {
+      setTopics(topicResult);
     });
-  }, [articles, sort_by, order]);
+  }, []);
+
+  useEffect(() => {
+    getArticles(params.topic, sort_by, order).then((result) => {
+      setArticles(result);
+      setIsLoading(false);
+    });
+  }, [params.topic, sort_by, order]);
 
   const { loggedInUser } = useContext(AccountContext);
 
   if (isLoading) {
     return (
-      <div id="loaderContainer">
-        <div class="loader"></div>
+      <div>
+        <p>Loading...</p>
       </div>
     );
   }
@@ -42,9 +43,8 @@ const HomePage = () => {
     <>
       <p>Homepage Logged in as {loggedInUser}</p>
       <TopicFilter topics={topics} />
-      <SortForm setSort_by={setSort_by} setOrder={setOrder}/>
+      <SortForm setSort_by={setSort_by} setOrder={setOrder} />
       <ArticleContainer articles={articles} />
-      
     </>
   );
 };
